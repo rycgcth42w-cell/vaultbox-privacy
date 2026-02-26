@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultBox – Privacy Policy</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background: #0a0a0f;
+            color: #e8e8f0;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 60px 24px 50px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #4f8ef7, #a259f7);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #fff;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #8b9cc8;
+            font-size: 0.95rem;
+        }
+
+        main {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        .card {
+            background: #13131f;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #a78bfa;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 .icon {
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: #b0b8d4;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .card p:last-child { margin-bottom: 0; }
+
+        .highlight {
+            background: rgba(79, 142, 247, 0.08);
+            border: 1px solid rgba(79, 142, 247, 0.2);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 14px 0;
+            color: #93b4f7;
+            font-size: 0.9rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        ul li {
+            color: #b0b8d4;
+            font-size: 0.95rem;
+            padding: 6px 0 6px 24px;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        ul li:last-child { border-bottom: none; }
+
+        ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #4f8ef7;
+            font-size: 0.85rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.12);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.25);
+            border-radius: 20px;
+            padding: 3px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .contact a {
+            color: #a78bfa;
+            text-decoration: none;
+        }
+
+        .contact a:hover { text-decoration: underline; }
+
+        footer {
+            text-align: center;
+            padding: 32px 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: #4a4f6a;
+            font-size: 0.82rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">🔐</div>
+    <h1>VaultBox</h1>
+    <p>Privacy Policy &nbsp;·&nbsp; Effective date: June 1, 2025</p>
+</header>
+
+<main>
+
+    <div class="card">
+        <h2><span class="icon">📋</span> Overview</h2>
+        <p>VaultBox is a time-locked encrypted vault app for macOS, developed by <strong>Aino</strong>. This policy explains what data the app accesses, how it is used, and what leaves your device.</p>
+        <div class="highlight">
+            VaultBox is designed with privacy as a core principle. All your vault data is encrypted locally on your Mac and never sent to any server operated by the developer.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="icon">📦</span> Data Stored on Your Device</h2>
+        <p>VaultBox stores the following data <strong>exclusively on your Mac</strong>:</p>
+        <ul>
+            <li>Encrypted vault contents (files, notes, and items you add)</li>
+            <li>Locker names, icons, and timer configurations (via SwiftData)</li>
+            <li>Master password hash and per-locker encryption keys (via macOS Keychain)</li>
+            <li>SMTP credentials for emergency email alerts (via macOS Keychain, encrypted)</li>
+            <li>Emergency recipient email address (encrypted, via macOS Keychain)</li>
+            <li>ntfy.sh topic name (via UserDefaults – not sensitive)</li>
+        </ul>
+        <p style="margin-top:14px;">None of this data is transmitted to the developer or any third-party analytics service.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="icon">🌐</span> Network Activity <span class="badge">User-initiated only</span></h2>
+        <p>VaultBox makes outgoing network connections <strong>only when you explicitly trigger an emergency alert</strong>. No background telemetry or analytics traffic is ever sent.</p>
+        <ul>
+            <li><strong>SMTP email</strong> — sent to your chosen recipient address using credentials you provide. VaultBox connects directly to the SMTP server you configure (e.g. smtp.gmail.com). No data passes through developer-operated servers.</li>
+            <li><strong>ntfy.sh push notification</strong> — an alert message is posted to the ntfy.sh topic name you configure. This is an optional feature. See <a href="https://ntfy.sh/privacy" target="_blank" style="color:#a78bfa;">ntfy.sh's privacy policy</a> for details on their service.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="icon">🚫</span> What We Never Do</h2>
+        <ul>
+            <li>We never collect analytics, crash reports, or usage statistics</li>
+            <li>We never access your vault contents — all encryption happens on-device</li>
+            <li>We never share any data with advertisers or data brokers</li>
+            <li>We never store anything on developer-operated servers</li>
+            <li>We never use tracking technologies of any kind</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="icon">🔑</span> macOS Permissions Used</h2>
+        <ul>
+            <li><strong>App Sandbox</strong> — VaultBox runs in a sandbox for your security</li>
+            <li><strong>Network access</strong> — only for user-triggered emergency alerts (SMTP / ntfy.sh)</li>
+            <li><strong>File access (user-selected)</strong> — to let you import files into your vault</li>
+            <li><strong>Notifications</strong> — to alert you when a timer-locked locker becomes accessible</li>
+            <li><strong>Keychain</strong> — to securely store encryption keys and credentials</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="icon">👶</span> Children's Privacy</h2>
+        <p>VaultBox is not directed at children under 13. We do not knowingly collect any personal information from children.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="icon">🔄</span> Changes to This Policy</h2>
+        <p>If this privacy policy changes, the updated version will be published at this URL with a new effective date. Continued use of VaultBox after changes constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="card contact">
+        <h2><span class="icon">✉️</span> Contact</h2>
+        <p>Questions about this privacy policy? You can reach the developer via the Mac App Store support page for VaultBox, or open an issue on the <a href="https://github.com/rycgcth42w-cell/vaultbox-privacy" target="_blank">GitHub repository</a> for this policy.</p>
+    </div>
+
+</main>
+
+<footer>
+    © 2025 Aino · VaultBox for macOS · All vault data stays on your device.
+</footer>
+
+</body>
+</html>
